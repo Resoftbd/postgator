@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://root:resoft@127.0.0.1:27017/admin");
+mongoose.connect("mongodb://root:12345@127.0.0.1:27017/admin");
 
 
 var UserSchema = new mongoose.Schema({
