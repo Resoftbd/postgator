@@ -1,0 +1,17 @@
+{
+  "name": "postgator",
+  "version": "1.0.0",
+  "description": "A social media post shareing app!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Resoft",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.1",
+    "express": "^4.14.1",
+    "mongoose": "^4.8.1",
+    "parser": "^0.1.4"
+  }
+}

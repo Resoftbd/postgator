@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Postgator</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+    <script type="text/javaScript" src="js/app.js"></script>
+     <link rel="stylesheet" href="css/style.css">
+
+   </head>
+  <style>
+      .content{margin-top:160px; height:270px; border-radius:7px; overflow:hidden;}
+      .element{margin:15px;}
+      @media screen and (max-width: 780px) {
+          .content{padding:10px!important; margin-left:170px!important; margin-right:170px!important; margin-top:160px;}
+          .element{margin:15px 10px;}
+      }
+      @media screen and (max-width: 560px) {
+          .content{padding:10px!important; margin-left:50px!important; margin-right:50px!important; margin-top:150px;}
+      }
+      @media screen and (max-width: 480px) {
+          .content{padding:5px!important; margin-left:16px!important; margin-right:16px!important; margin-top:150px;}
+          .element{margin:15px 5px;}
+      }
+      @media screen and (max-width: 321px) {
+          .content{padding:4px!important; margin-left:4px!important; margin-right:4px!important; margin-top:140px;}
+          .element{margin:15px 0px;}
+      }
+  </style>
+  </head>
+  <body>
+  <div class="row">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4 content">
+          <h3>News</h3>
+          <div class="row element">
+              <div class="col-xs-3">
+                  <h4>Email:</h4>
+              </div>
+              <div class="col-xs-9">
+                  <input class="form-control" id="email" name="email" placeholder="email" type="email" required>
+              </div>
+          </div>
+          <div class="row element">
+              <div class="col-xs-3">
+                  <h4>Password:</h4>
+              </div>
+              <div class="col-xs-9">
+                  <input class="form-control" id="pass" name="pass" placeholder="password" type="password" required>
+              </div>
+          </div>
+          <a href = "registration.html"><button class="btn btn-primary pull-right" style="margin:15px;">Register</button><br></a>
+          <button class="btn btn-primary pull-right" style="margin:15px;">Log in</button><br>
+          <p class="notice"> Forgot password? <a href="admin.html"> Click here. </a>
+      </div>
+      <div class="col-md-4">
+
+      </div>
+  </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
