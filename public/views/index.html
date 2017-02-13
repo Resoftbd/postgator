@@ -17,20 +17,45 @@
 
 <style>
 body{ height:100vh; overflow: hidden; padding-top:14vh; font-family: 'Arvo', serif;
-		background-image: url('../assets/img/demo1.jpg');}
-.log_reg{width:30vw; margin:15vh 35vw; padding:2vw;
+		}
+		
+#grad {
+  background: -webkit-linear-gradient(#563D7D, #6E5398); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#563D7D, #6E5398); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#563D7D, #6E5398); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#563D7D, #6E5398); /* Standard syntax */
+}
+.log_reg{width:30vw; margin:19vh 35vw; padding:2vw; padding-bottom:1vh;
 		background: rgba(244,244,244,0.1);}
 .nav-tabs li{width:13vw; color:#eef;}
 .nav-tabs li a{width:13vw; color:#fff; text-shadow:1px 1px 1px #222; font-size:15px;}
-.nav-tabs li a:hover{width:13vw; color:#fff; background:#41B6EB;  text-shadow:1px 1px 1px #222; border:1px solid #41B6EB; font-size:15px;}
-.active a{ color:#fff!important; background:#41B6EB!important;  text-shadow:1px 1px 1px #222; border:1px solid #41B6EB!important; font-size:15px;}
-.control-label{color:#fff; text-shadow:1px 1px 1px #222; font-size:15px;}
+.nav-tabs li a:hover{width:13vw; color:#fff; background:#563D7D;  text-shadow:1px 1px 1px #111; border:1px solid #563D7D; font-size:15px;}
+.active a{ color:#fff!important; background:#563D7D!important;  text-shadow:1px 1px 1px #111; border:1px solid #563D7D!important; font-size:15px;}
+.control-label{color:#fff; text-shadow:1px 1px 1px #111; font-size:15px;}
+
+#logo{ border-radius: 15vw; 
+    -webkit-animation: myfirst 2s linear 1s infinite alternate; /* Chrome, Safari, Opera */animation: myfirst 2s linear 1s infinite alternate;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    from {opacity:1}
+    to {opacity:0.85}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    from {opacity:0.85}
+    to {opacity:1}
+}
 </style>
 
 </head>
 
 
-<body ng-app="postgator" ng-controller="postController">
+<body id="grad" ng-app="postgator" ng-controller="postController" onclick="change()">
+
+<img id="logo" src="../assets/img/jj.png" style="position:fixed; left:45vw; top: 9.5vh; height:9.5vw; width:10vw;">
 		<div class="log_reg">
 			 <ul class="nav nav-tabs">
 				<li class="active"><a data-toggle="tab" href="#home"><b>Log in</b></a></li>
@@ -53,7 +78,15 @@ body{ height:100vh; overflow: hidden; padding-top:14vh; font-family: 'Arvo', ser
 								  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
 								</div>
 							  </div>
-							  <a class="pull-right" href="" style="color:#ddd; text-shadow:1px 1px 1px #445;">Forgot password?</a>
+							  <br>
+							  <div class="form-group">
+									<div class="col-sm-7">
+										<a class="pull-rsssight" href="" style="color:#ddd; text-shadow:1px 1px 1px #111; background:none!important; border:0px!important;">Forgot password?</a>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <button type="submit" style="color:#563D7D" class="btn btn-default pull-right" ng-click="saveUser()" ><b>Log In</b></button>
+                                    </div>
+                                </div>
 						</form>
 				  </div>
 				<div id="menu1" class="tab-pane fade">
@@ -78,12 +111,14 @@ body{ height:100vh; overflow: hidden; padding-top:14vh; font-family: 'Arvo', ser
 								  </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-default" ng-click="saveUser()" >Submit</button>
+                                        <button type="submit" style="color:#563D7D" class="btn btn-default pull-right" ng-click="saveUser()" ><b>Sign Up</b></button>
                                     </div>
                                 </div>
 						</form>
 					</div>
 			  </div>
 		 </div>
+
+		 
 
 </body>
