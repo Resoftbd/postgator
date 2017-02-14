@@ -9,7 +9,8 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
 		$scope.msg="";
 		$scope.msgType="";
 
-		/*$scope.users = [
+		/*
+		$scope.users = [
 		{username: "testing", fullName: "testdddd", email: "test.com"},
 		{username: "fdg", fullName: "testdddd", email: "ffg.com"},
 		{username: "testing", fullName: "testdddd", email: "test.com"}
@@ -24,11 +25,14 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
 
 	$scope.saveUser=function(){
 		console.log($scope.newUser);
-		/*var data = $.param({
+	/*	var pass = $scope.newUser.users_password;
+		var crypto = require('crypto');
+		var encr_pass = crypto.createHash('md5').update(pass).digest("hex");
+		var data = $.param({
             register: JSON.stringify({
                 users_name: $scope.newUser.users_name,
                 users_email : $scope.newUser.users_email,
-                users_password : $scope.newUser.users_password
+                users_password : encr_pass
             })
         });
         console.log(data);*/
