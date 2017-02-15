@@ -21,14 +21,14 @@ app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 multer();
+app.use(cookieParser());
 app.use(session({
     secret: 'resoft secret postgator',
     resave: true,
     saveUninitialized: true
 }));
-app.use(cookieParser());
-app.use(passport.initialize());
-app.use(passport.session());
+
+
 require("./app/app.js")(app);   //Including node controller with express
 
 app.listen(3000, function(){
