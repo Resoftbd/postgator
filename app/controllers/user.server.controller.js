@@ -5,6 +5,25 @@ module.exports = function(app) {
 
     var UserModel = require("../models/user.server.model.js")();
 
+    app.get('/login', function (req, res) {
+        var data = req.body;
+        console.log(data);
+        UserModel.findOne(data, function (err, objects) {
+            if (err) {
+                res.send(err.message)
+                return console.error(err);
+            }
+            res.send(objects);
+            req.session.loggedIn =true;
+            req.session.users_id = res.obj._id;
+            console.log(res);
+            console.log(req.session.users_id);
+
+
+        });
+    });
+
+
     app.post('/register', function (req, res) {
         var data = req.body;
         console.log(data);
