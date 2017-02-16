@@ -65,6 +65,10 @@ body{ height:100vh; overflow: hidden; padding-top:14vh; font-family: 'Arvo', ser
 
 			  <div class="tab-content">
 				<div id="home" class="tab-pane fade in active">
+					<div class="alert alert-{{msgType}}" ng-if="msg">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						{{msg}}
+					</div>
 					  <form class="form-horizontal" role="form">
 							  <div class="form-group">
 								<label class="control-label col-sm-4" for="email">Email</label>
