@@ -1,0 +1,38 @@
+body{ height:100vh; overflow: hidden; padding-top:14vh; font-family: 'Arvo', serif;
+}
+
+#grad {
+    background: -webkit-linear-gradient(#563D7D, #6E5398); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#563D7D, #6E5398); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#563D7D, #6E5398); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#563D7D, #6E5398); /* Standard syntax */
+}
+.log_reg{width:30vw; margin:19vh 35vw; padding:2vw; padding-bottom:1vh;
+    background: rgba(244,244,244,0.1);}
+.nav-tabs li{width:13vw; color:#eef;}
+.nav-tabs li a{width:13vw; color:#fff; text-shadow:1px 1px 1px #222; font-size:15px;}
+.nav-tabs li a:hover{width:13vw; color:#fff; background:#563D7D;  text-shadow:1px 1px 1px #111; border:1px solid #563D7D; font-size:15px;}
+.active a{ color:#fff!important; background:#563D7D!important;  text-shadow:1px 1px 1px #111; border:1px solid #563D7D!important; font-size:15px;}
+.control-label{color:#fff; text-shadow:1px 1px 1px #111; font-size:15px;}
+.icons{font-size: 25px!important; margin-left:-5px; margin-top:-5px;}
+#logo{ border-radius: 15vw;
+    -webkit-animation: myfirst 1.4s linear 1s infinite alternate; /* Chrome, Safari, Opera */animation: myfirst 1.4s linear 1s infinite alternate;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    from {opacity:1}
+    to {opacity:0.7}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    from {opacity:0.7}
+    to {opacity:1}
+}
+.suggestion_para{list-style:none; width:30vw; margin:10vh 36vw; padding:2vw 5vh; color:#f9f9f9; font-size:40px; font-family: 'Cookie', cursive;}
+
+.log_social{list-style:none; border-radius:5vw; display:inline-block; width:60vw; margin:-30vh 20vw; padding:2vw 5vh; background: rgba(244,244,244,0.1);}
+.chobi{height:62px; width:62px; border-radius:31px; margin-top:-4px; box-shadow:0px 0px 0px #335; margin-right:41px; margin-left:42px;
+        transition: height 0.4s, width 0.4s, margin-top 0.4s, margin-right 0.4s, margin-left 0.4s,  box-shadow 0.4s;}
+.chobi:hover{height:64px; width:64px; margin-top:-6px; margin-right:40px; margin-left:41px; box-shadow:-4px 4px 4px #446;}

@@ -4,6 +4,7 @@
 	<title>Postgator</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css" type="text/css">
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -14,41 +15,6 @@
 	<link href="../assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<script type="text/javaScript" src="../controllers/app_controller.js"></script>
 
-
-<style>
-body{ height:100vh; overflow: hidden; padding-top:14vh; font-family: 'Arvo', serif;
-		}
-		
-#grad {
-  background: -webkit-linear-gradient(#563D7D, #6E5398); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#563D7D, #6E5398); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#563D7D, #6E5398); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#563D7D, #6E5398); /* Standard syntax */
-}
-.log_reg{width:30vw; margin:19vh 35vw; padding:2vw; padding-bottom:1vh;
-		background: rgba(244,244,244,0.1);}
-.nav-tabs li{width:13vw; color:#eef;}
-.nav-tabs li a{width:13vw; color:#fff; text-shadow:1px 1px 1px #222; font-size:15px;}
-.nav-tabs li a:hover{width:13vw; color:#fff; background:#563D7D;  text-shadow:1px 1px 1px #111; border:1px solid #563D7D; font-size:15px;}
-.active a{ color:#fff!important; background:#563D7D!important;  text-shadow:1px 1px 1px #111; border:1px solid #563D7D!important; font-size:15px;}
-.control-label{color:#fff; text-shadow:1px 1px 1px #111; font-size:15px;}
-
-#logo{ border-radius: 15vw; 
-    -webkit-animation: myfirst 2s linear 1s infinite alternate; /* Chrome, Safari, Opera */animation: myfirst 2s linear 1s infinite alternate;
-}
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes myfirst {
-    from {opacity:1}
-    to {opacity:0.85}
-}
-
-/* Standard syntax */
-@keyframes myfirst {
-    from {opacity:0.85}
-    to {opacity:1}
-}
-</style>
 
 </head>
 
@@ -67,14 +33,14 @@ body{ height:100vh; overflow: hidden; padding-top:14vh; font-family: 'Arvo', ser
 				<div id="home" class="tab-pane fade in active">
 					  <form class="form-horizontal" role="form">
 							  <div class="form-group">
-								<label class="control-label col-sm-4" for="email">Email:</label>
-								<div class="col-sm-8">
+								<label class="control-label col-sm-2" for="email"><i class="fa fa-envelope icons"></i></label>
+								<div class="col-sm-10">
 								  <input type="email" class="form-control" id="email" placeholder="Enter email">
 								</div>
 							  </div>
 							  <div class="form-group">
-								<label class="control-label col-sm-4" for="pwd">Password:</label>
-								<div class="col-sm-8"> 
+								<label class="control-label col-sm-2" for="pwd"><i class="fa fa-lock icons"></i></label>
+								<div class="col-sm-10">
 								  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
 								</div>
 							  </div>
@@ -92,21 +58,21 @@ body{ height:100vh; overflow: hidden; padding-top:14vh; font-family: 'Arvo', ser
 				<div id="menu1" class="tab-pane fade">
 					<form class="form-horizontal" role="form">
 								  <div class="form-group">
-									<label class="control-label col-sm-4" for="name">Name:</label>
-									<div class="col-sm-8">
+									<label class="control-label col-sm-2" for="name"><i class="fa fa-user icons"></i></label>
+									<div class="col-sm-10">
 									  <input type="text" class="form-control" ng-model="newUser.users_name" id="name" placeholder="Full Name">
 									</div>
 								  </div>
 								  <div class="form-group">
-									<label class="control-label col-sm-4" for="email">Email:</label>
-									<div class="col-sm-8">
-									  <input type="email" class="form-control" ng-model="newUser.users_email" id="email" placeholder="Enter email">
+									<label class="control-label col-sm-2" for="email"><i class="fa fa-envelope icons"></i></label>
+									<div class="col-sm-10">
+									  <input type="email" class="form-control" ng-model="newUser.users_email" id="email_reg" placeholder="Enter email">
 									</div>
 								  </div>
 								  <div class="form-group">
-									<label class="control-label col-sm-4" ng-model="newUser.users_password" for="pwd">Password:</label>
-									<div class="col-sm-8"> 
-									  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+									<label class="control-label col-sm-2" ng-model="newUser.users_password" for="pwd"><i class="fa fa-lock icons"></i></label>
+									<div class="col-sm-10">
+									  <input type="password" class="form-control" id="pwd_reg" placeholder="Enter password">
 									</div>
 								  </div>
                                 <div class="form-group">
