@@ -36,3 +36,15 @@ body{ height:100vh; overflow: hidden; padding-top:14vh; font-family: 'Arvo', ser
 .chobi{height:62px; width:62px; border-radius:31px; margin-top:-4px; box-shadow:0px 0px 0px #335; margin-right:41px; margin-left:42px;
         transition: height 0.4s, width 0.4s, margin-top 0.4s, margin-right 0.4s, margin-left 0.4s,  box-shadow 0.4s;}
 .chobi:hover{height:64px; width:64px; margin-top:-6px; margin-right:40px; margin-left:41px; box-shadow:-4px 4px 4px #446;}
+
+.header{margin:0px; height:9vh!important; width:100%; margin-top:-90px; margin-left: 5px!important;}
+.dash_thumbnail{width:100%; margin:5px 0px; background:#9acfea; height:120px;}
+.dash_contents{height:92vh; width:80vw; background:#ddd; padding-left:25px; padding-top:7px;}
+.dash_contents > .nav-tabs li a{width: 100px; margin:0px 1px;color:#101; border-radius:22px; text-shadow: 0px 0px 0px #111; text-align:center; font-size:15px; transition: background 0.5s,color 0.5s;}
+.dash_contents > .nav-tabs li a:hover{width: 100px; color:#fff; background:#00A5CF; border-radius:22px; border:1px solid #00A5CF; font-size:15px;}
+.dash_contents > .nav-tabs > .active a{ color:#fff!important; background:#00A5CF!important; border:1px solid #00A5CF!important; font-size:15px;}
+.dash_tab_content{width:70vw; padding:20px 30px; font-size:20px;}
+.dash_label{margin-top:10px;}
+.chobigulo{height:60px; width:60px; border-radius:30px; margin-top:9px; box-shadow:0px 0px 0px #335; margin-right:59px; margin-left:1px;
+    transition: height 0.4s, width 0.4s, margin-top 0.4s, margin-right 0.4s, margin-left 0.4s,  box-shadow 0.4s;}
+.chobigulo:hover{height:62px; width:62px; margin-top:7px; margin-right:58px; margin-left:0px; box-shadow:-4px 4px 4px #446;}
