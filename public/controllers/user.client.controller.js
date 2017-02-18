@@ -34,9 +34,9 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
     }).success(function(response){
         console.log(response);
         init();
-        $scope.msg="Selected User Updated Successfully!!!";
+        $scope.msg="Successssss!!!";
         $scope.msgType="success";
-        $location.url("../views/userDashboard");
+        //$location.url("../views/userDashboard");
     });
     };
 
