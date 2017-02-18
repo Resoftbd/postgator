@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 	<head>
  
 		<title>Circular Navigation - Demo 1 | Codrops</title>
@@ -36,3 +37,125 @@
 </div>
 	</body>
 </html>
+=======
+<head>
+	<title>Postgator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css" type="text/css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript" src="../assets/css/angular.min.js"></script>
+	<script type="text/javascript" src="../assets/css/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../assets/css/bootstrap.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+	<link href="../assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<script type="text/javaScript" src="../controllers/user.client.controller.js"></script>
+
+
+</head>
+
+
+<body id="grad" ng-app="postgator" ng-controller="postController" onclick="change()">
+
+<img id="logo" src="../assets/img/jj.png" style="position:fixed; left:45vw; top: 9.5vh; height:9.5vw; width:10vw;">
+		<div class="log_reg">
+			 <ul class="nav nav-tabs">
+				<li class="active"><a data-toggle="tab" href="#home"><b>Log in</b></a></li>
+				<li><a data-toggle="tab" href="#menu1"><b>Register</b></a></li>
+			  </ul><br>
+			  
+
+			  <div class="tab-content">
+				<div id="home" class="tab-pane fade in active">
+					<div class="alert alert-{{msgType}}" ng-if="msg">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						{{msg}}
+					</div>
+					  <form class="form-horizontal" role="form">
+							  <div class="form-group">
+
+								<label class="control-label col-sm-2" for="email"><i class="fa fa-envelope icons"></i></label>
+								<div class="col-sm-10">
+								  <input type="email" class="form-control" ng-model="user.users_email" id="email" placeholder="Enter email">
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label class="control-label col-sm-2" for="pwd"><i class="fa fa-lock icons"></i></label>
+								<div class="col-sm-10">
+<<<<<<< HEAD
+								  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+
+								<label class="control-label col-sm-4" for="email">Email</label>
+								<div class="col-sm-8">
+								  <input type="email" class="form-control"  ng-model="user.users_email"  id="email" placeholder="Enter email">
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label class="control-label col-sm-4" for="pwd">Password:</label>
+								<div class="col-sm-8"> 
+								  <input type="password" class="form-control"  ng-model="user.users_password"  id="pwd" placeholder="Enter password">
+=======
+								  <input type="password" class="form-control" ng-model="user.users_password"  id="pwd" placeholder="Enter password">
+
+>>>>>>> db4ef4ff68f32b865d8332ddcf841cc44d68816d
+								</div>
+							  </div>
+							  <br>
+							  <div class="form-group">
+									<div class="col-sm-7">
+										<a class="pull-rsssight" href="" style="color:#ddd; text-shadow:1px 1px 1px #111; background:none!important; border:0px!important;">Forgot password?</a>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <button type="submit" style="color:#563D7D" class="btn btn-default pull-right" ng-click="login()" ><b>Log In</b></button>
+                                    </div>
+                                </div>
+						</form>
+				  </div>
+				<div id="menu1" class="tab-pane fade">
+					<form class="form-horizontal" role="form">
+								  <div class="form-group">
+									<label class="control-label col-sm-2" for="name"><i class="fa fa-user icons"></i></label>
+									<div class="col-sm-10">
+									  <input type="text" class="form-control" ng-model="newUser.users_name" id="name" placeholder="Full Name">
+									</div>
+								  </div>
+								  <div class="form-group">
+									<label class="control-label col-sm-2" for="email"><i class="fa fa-envelope icons"></i></label>
+									<div class="col-sm-10">
+									  <input type="email" class="form-control" ng-model="newUser.users_email" id="email_reg" placeholder="Enter email">
+									</div>
+								  </div>
+								  <div class="form-group">
+
+<<<<<<< HEAD
+									<label class="control-label col-sm-2" ng-model="newUser.users_password" for="pwd"><i class="fa fa-lock icons"></i></label>
+									<div class="col-sm-10">
+									  <input type="password" class="form-control" id="pwd_reg" placeholder="Enter password">
+
+									<label class="control-label col-sm-4"  for="pwd">Password:</label>
+									<div class="col-sm-8"> 
+									  <input type="password" class="form-control" ng-model="newUser.users_password" id="pwd" placeholder="Enter password">
+=======
+									<label class="control-label col-sm-2"  for="pwd"><i class="fa fa-lock icons"></i></label>
+									<div class="col-sm-10">
+									  <input type="password" class="form-control" id="pwd_reg" ng-model="newUser.users_password" placeholder="Enter password">
+>>>>>>> db4ef4ff68f32b865d8332ddcf841cc44d68816d
+
+									</div>
+								  </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <button type="submit" style="color:#563D7D" class="btn btn-default pull-right" ng-click="saveUser()" ><b>Sign Up</b></button>
+                                    </div>
+                                </div>
+						</form>
+					</div>
+			  </div>
+		 </div>
+
+		 
+
+</body>
+>>>>>>> 4db6a033f0ea416bdeebdad25fab229c2a9d72c9

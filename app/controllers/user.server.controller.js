@@ -1,6 +1,7 @@
 // Controller for log in and adding user
 
 var mongoose = require('mongoose');
+var re
 module.exports = function(app) {
 
     var UserModel = require("../models/user.server.model.js")();
@@ -13,11 +14,19 @@ module.exports = function(app) {
                 res.send(err.message)
                 return console.error(err);
             }
+<<<<<<< HEAD
             else {
                 res.send(objects);
                 req.session.loggedIn = true;
                 req.session.users_id = objects._id;
                 console.log(req.session.loggedIn);
+=======
+            else{
+                res.send(objects);
+                req.session.loggedIn =true;
+                req.session.users_id = objects._id;
+                console.log(req.session.loggedIn );
+>>>>>>> 4db6a033f0ea416bdeebdad25fab229c2a9d72c9
                 console.log(req.session.users_id);
             }
 
@@ -28,8 +37,20 @@ module.exports = function(app) {
 
     app.post('/register', function (req, res) {
         var data = req.body;
+<<<<<<< HEAD
        // var data = {users_email: val.users_email,users_password: val.users_password,users_name: val.users_name};
         console.log(val.users_email);
+=======
+        console.log(data);
+       /* var jsonObject = JSON.parse(req.body);
+        console.log(jsonObject.users_name);
+        var pass = "sasd";
+        var data = {
+            users_name:jsonObject.users_name,
+            users_email:jsonObject.users_email,
+            users_password:pass
+        };*/
+>>>>>>> 4db6a033f0ea416bdeebdad25fab229c2a9d72c9
         UserModel.create(data, function (err, newInstance) {
             if (err) {
                 res.send(err.message)
