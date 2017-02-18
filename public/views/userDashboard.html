@@ -1,10 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Postgator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/main.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/css/angular.min.js"></script>
+    <script type="text/javascript" src="../assets/css/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/css/bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link href="../assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javaScript" src="../controllers/user.client.controller.js"></script>
+
+
 </head>
-<body>
-This is the user dashboard
+
+
+<body id="grad" ng-app="postgator" ng-controller="postController" onclick="change()">
+
+    <div class="header row">
+        <div class="col-xs-6">
+            <img src="../assets/img/jj.png" style="height:4vw; width:4vw; padding:0.5vw; border-radius:2vw;">
+        </div>
+        <div class="col-xs-6">
+            <img src="../assets/img/bene.jpg" class="pull-right" style="height:4vw; width:4vw; padding:0.5vw; border-radius:2vw;">
+        </div>
+    </div>
+
+    <div class="dashboard_body row">
+        <div class="col-xs-3 row" style="height:92vh;overflow-y: scroll; background:#fff;">
+            <div class="col-xs-6" style=" padding-left:20px!important; padding-right:0px;">
+                <div class="dash_thumbnail">
+                    <img src="../assets/img/img18.jpg" style="width:100%;padding-top:5px;">
+                </div>
+                <div class="dash_thumbnail">
+                    <img src="../assets/img/img19.jpg" style="width:100%;padding-top:5px;">
+                </div>
+                <div class="dash_thumbnail">
+                    <img src="../assets/img/img21.jpg" style="width:100%;padding-top:5px;">
+                </div>
+                <div class="dash_thumbnail">
+                    <img src="../assets/img/img22.jpg" style="width:100%;padding-top:5px;">
+                </div>
+                <div class="dash_thumbnail">
+                    <img src="../assets/img/img23.jpg" style="width:100%;padding-top:5px;">
+                </div>
+                <div class="dash_thumbnail">
+                    <img src="../assets/img/img18.jpg" style="width:100%;padding-top:5px;">
+                </div>
+            </div>
+            <div class="col-xs-6" style="padding-left:20px!important; padding-right:0px;">
+                <div class="dash_thumbnail">
+                    <div class="dash_thumbnail">
+                        <img src="../assets/img/img18.jpg" style="width:100%;padding-top:5px;">
+                    </div>
+                    <img src="../assets/img/img23.jpg" style="width:100%;padding-top:5px;">
+                </div>
+                <div class="dash_thumbnail">
+                    <img src="../assets/img/img22.jpg" style="width:100%;padding-top:5px;">
+                </div>
+                <div class="dash_thumbnail">
+                    <img src="../assets/img/img21.jpg" style="width:100%;padding-top:5px;">
+                </div>
+                <div class="dash_thumbnail">
+                    <img src="../assets/img/img19.jpg" style="width:100%;padding-top:5px;">
+                </div>
+                <div class="dash_thumbnail">
+                    <img src="../assets/img/img18.jpg" style="width:100%;padding-top:5px;">
+                </div>
+            <button class="btn btn-info" style="border-radius: 22px; font-size:20px; margin:10px; margin-left:-32px; background:#00A5CF;"><b style="padding: 0px 2px;">+</b></button>
+
+            </div>
+
+        </div>
+        <div class="col-xs-9">
+            <div class="dash_contents">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#images"><b>Images</b></a></li>
+                    <li><a data-toggle="tab" href="#vedios"><b>Vedios</b></a></li>
+                    <li><a data-toggle="tab" href="#texts"><b>Texts</b></a></li>
+                </ul><br>
+
+
+                <div class="tab-content">
+                    <div id="images" class="tab-pane fade in active dash_tab_content">
+                        <form class="form-horizontal" role="form">
+
+                            <div class="row dash_label">
+                            <label class="col-sm-3" for="imagelink">Link:</label>
+                            <input class="col-sm-9" type="text" id="imagelink" name="imagelink" placeholder="Input image link" style="">
+                            </div>
+                            <div class="row dash_label">
+                            <label class="dash_label col-sm-3" for="text">Text:</label>
+                            <textarea class="col-sm-9" cols="30" rows="7" id="text" placeholder="what are you thinking"></textarea>
+                            </div>
+                            <div class="row dash_label">
+                            <label class="dash_label col-sm-3" for="hashtags">Hashtags:</label>
+                            <input type="text" class="col-sm-9" name="hashtags" id="hashtags" placeholder="Input hashtags, separated by commas">
+                            </div>
+
+                            <div class="row dash_label">
+                                <label class="dash_label col-sm-3">Where should we post this</label>
+                                <ul class="col-sm-9">
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/Facebook.png" class="chobigulo"> </li>
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/googleplus.png" class="chobigulo"> </li>
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/twitter.png" class="chobigulo"> </li>
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/instagram.png" class="chobigulo"> </li>
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/wordPress.png" class="chobigulo"> </li>                            </div>
+                                </ul>
+                            <br>
+                            <button type="submit" class="btn btn-info pull-right" style="border-radius: 19px; font-size:17px; background:#00A5CF;">Publish</button>
+                            </form>
+
+
+                    </div>
+                    <div id="vedios" class="tab-pane fade dash_tab_content">
+                        <form class="form-horizontal" role="form">
+
+                            <div class="row dash_label">
+                                <label class="col-sm-3" for="vediolink">Link:</label>
+                                <input class="col-sm-9" type="text" id="vediolink" name="vediolink" placeholder="Input vedio link" style="">
+                            </div>
+                            <div class="row dash_label">
+                                <label class="dash_label col-sm-3" for="vediotext">Text:</label>
+                                <textarea class="col-sm-9" cols="30" rows="7" id="vediotext" placeholder="what are you thinking"></textarea>
+                            </div>
+                            <div class="row dash_label">
+                                <label class="dash_label col-sm-3" for="vediohashtags">Hashtags:</label>
+                                <input type="text" class="col-sm-9" name="vediohashtags" id="vediohashtags" placeholder="Input hashtags, separated by commas">
+                            </div>
+
+                            <div class="row dash_label">
+                                <label class="dash_label col-sm-3">Where should we post this</label>
+                                <ul class="col-sm-9">
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/Facebook.png" class="chobigulo"> </li>
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/googleplus.png" class="chobigulo"> </li>
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/twitter.png" class="chobigulo"> </li>
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/instagram.png" class="chobigulo"> </li>
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/wordPress.png" class="chobigulo"> </li>                            </div>
+                            </ul>
+                            <br>
+                            <button type="submit" class="btn btn-info pull-right" style="border-radius: 19px; font-size:17px; background:#00A5CF;">Publish</button>
+                        </form>
+                    </div>
+                    <div id="texts" class="tab-pane fade dash_tab_content">
+                        <form class="form-horizontal" role="form">
+
+                            <div class="row dash_label">
+                                <label class="dash_label col-sm-3" for="onlytext">Text:</label>
+                                <textarea class="col-sm-9" cols="30" rows="7" id="onlytext" placeholder="what are you thinking"></textarea>
+                            </div>
+                            <div class="row dash_label">
+                                <label class="dash_label col-sm-3" for="onlyhashtags">Hashtags:</label>
+                                <input type="text" class="col-sm-9" name="onlyhashtags" id="onlyhashtags" placeholder="Input hashtags, separated by commas">
+                            </div>
+                            <br>
+                            <div class="row dash_label">
+                                <label class="dash_label col-sm-3">Where should we post this</label>
+                                <ul class="col-sm-9">
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/Facebook.png" class="chobigulo"> </li>
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/googleplus.png" class="chobigulo"> </li>
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/twitter.png" class="chobigulo"> </li>
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/instagram.png" class="chobigulo"> </li>
+                                    <li style="list-style:none; display:inline-block;"><img src="../assets/img/wordPress.png" class="chobigulo"> </li>                            </div>
+                            </ul>
+                            <br>
+                            <button type="submit" class="btn btn-info pull-right" style="border-radius: 19px; font-size:17px; background:#00A5CF;">Publish</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
 </html>

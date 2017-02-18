@@ -5,19 +5,21 @@ module.exports = function(app) {
 
     var UserModel = require("../models/user.server.model.js")();
 
-    app.get('/login', function (req, res) {
+    app.post('/login', function (req, res) {
         var data = req.body;
         console.log(data);
-        UserModel.findOne(data, function (err, objects) {
+        UserModel.findOne({users_email: data.users_email,users_password: data.users_password}, function (err, objects) {
             if (err) {
                 res.send(err.message)
                 return console.error(err);
             }
-            res.send(objects);
-            req.session.loggedIn =true;
-            req.session.users_id = res.obj._id;
-            console.log(res);
-            console.log(req.session.users_id);
+            else {
+                res.send(objects);
+                req.session.loggedIn = true;
+                req.session.users_id = objects._id;
+                console.log(req.session.loggedIn);
+                console.log(req.session.users_id);
+            }
 
 
         });
@@ -26,7 +28,8 @@ module.exports = function(app) {
 
     app.post('/register', function (req, res) {
         var data = req.body;
-        console.log(data);
+       // var data = {users_email: val.users_email,users_password: val.users_password,users_name: val.users_name};
+        console.log(val.users_email);
         UserModel.create(data, function (err, newInstance) {
             if (err) {
                 res.send(err.message)
