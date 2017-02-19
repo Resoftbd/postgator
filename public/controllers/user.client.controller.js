@@ -25,27 +25,22 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
 
     $scope.login=function(){
     	$http({
-        url:'http://127.0.0.1:3000/login/',
-        method: 'POST',
-        data: $httpParamSerializerJQLike($scope.user),
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }
-    }).success(function(response){
+            url: 'http://127.0.0.1:3000/login/',
+            method: 'POST',
+            data: $httpParamSerializerJQLike($scope.user),
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).success(function(response){
         console.log(response);
         init();
-<<<<<<< HEAD
+
         $scope.msg="successsss password!!!";
         $scope.msgType="success";
        // $location.url("../views/userDashboard");
-=======
-        $scope.msg="Successssss!!!";
-        $scope.msgType="success";
-        //$location.url("../views/userDashboard");
->>>>>>> 4db6a033f0ea416bdeebdad25fab229c2a9d72c9
+
     });
     };
-
 	$scope.saveUser=function(){
 		//console.log($scope.newUser);
 		/*var data = $.param({
