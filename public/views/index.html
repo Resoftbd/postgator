@@ -33,7 +33,7 @@
 				<div id="home" class="tab-pane fade in active">
 					<div class="alert alert-{{msgType}}" ng-if="msg">
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-						{{msg}}
+
 					</div>
 					  <form class="form-horizontal" role="form">
 							  <div class="form-group">
@@ -44,25 +44,10 @@
 								</div>
 							  </div>
 							  <div class="form-group">
-								<label class="control-label col-sm-2" for="pwd"><i class="fa fa-lock icons"></i></label>
+								<label class="control-label col-sm-2" for="pswd"><i class="fa fa-lock icons"></i></label>
 								<div class="col-sm-10">
-<<<<<<< HEAD
-								  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-
-								<label class="control-label col-sm-4" for="email">Email</label>
-								<div class="col-sm-8">
-								  <input type="email" class="form-control"  ng-model="user.users_email"  id="email" placeholder="Enter email">
-								</div>
-							  </div>
-							  <div class="form-group">
-								<label class="control-label col-sm-4" for="pwd">Password:</label>
-								<div class="col-sm-8"> 
-								  <input type="password" class="form-control"  ng-model="user.users_password"  id="pwd" placeholder="Enter password">
-=======
-								  <input type="password" class="form-control" ng-model="user.users_password"  id="pwd" placeholder="Enter password">
-
->>>>>>> db4ef4ff68f32b865d8332ddcf841cc44d68816d
-								</div>
+								  <input type="password" class="form-control" id="pswd" placeholder="Enter password">
+									</div>
 							  </div>
 							  <br>
 							  <div class="form-group">
@@ -89,24 +74,13 @@
 									  <input type="email" class="form-control" ng-model="newUser.users_email" id="email_reg" placeholder="Enter email">
 									</div>
 								  </div>
-								  <div class="form-group">
-
-<<<<<<< HEAD
-									<label class="control-label col-sm-2" ng-model="newUser.users_password" for="pwd"><i class="fa fa-lock icons"></i></label>
-									<div class="col-sm-10">
-									  <input type="password" class="form-control" id="pwd_reg" placeholder="Enter password">
-
-									<label class="control-label col-sm-4"  for="pwd">Password:</label>
-									<div class="col-sm-8"> 
-									  <input type="password" class="form-control" ng-model="newUser.users_password" id="pwd" placeholder="Enter password">
-=======
-									<label class="control-label col-sm-2"  for="pwd"><i class="fa fa-lock icons"></i></label>
-									<div class="col-sm-10">
-									  <input type="password" class="form-control" id="pwd_reg" ng-model="newUser.users_password" placeholder="Enter password">
->>>>>>> db4ef4ff68f32b865d8332ddcf841cc44d68816d
-
+									<div class="form-group">
+										<label class="control-label col-sm-2" for="pswd"><i class="fa fa-lock icons"></i></label>
+										<div class="col-sm-10">
+											<input type="password" class="form-control" id="pswd" placeholder="Enter password">
+										</div>
 									</div>
-								  </div>
+
                                 <div class="form-group">
                                     <div class="col-sm-12">
                                         <button type="submit" style="color:#563D7D" class="btn btn-default pull-right" ng-click="saveUser()" ><b>Sign Up</b></button>
@@ -114,7 +88,6 @@
                                 </div>
 						</form>
 					</div>
-			  </div>
 		 </div>
 
 		 

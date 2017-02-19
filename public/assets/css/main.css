@@ -30,7 +30,7 @@ body{ height:100vh; overflow: hidden; padding-top:14vh; font-family: 'Arvo', ser
     from {opacity:0.7}
     to {opacity:1}
 }
-.suggestion_para{list-style:none; width:30vw; margin:10vh 36vw; padding:2vw 5vh; color:#f9f9f9; font-size:40px; font-family: 'Cookie', cursive;}
+.suggestion_para{list-style:none; width:36vw; margin:10vh 36vw; padding:2vw 5vh; color:#f9f9f9; font-size:40px; font-family: 'Cookie', cursive;}
 
 .log_social{list-style:none; border-radius:5vw; display:inline-block; width:60vw; margin:-30vh 20vw; padding:2vw 5vh; background: rgba(244,244,244,0.1);}
 .chobi{height:62px; width:62px; border-radius:31px; margin-top:-4px; box-shadow:0px 0px 0px #335; margin-right:41px; margin-left:42px;
@@ -49,3 +49,5 @@ body{ height:100vh; overflow: hidden; padding-top:14vh; font-family: 'Arvo', ser
     transition: height 0.4s, width 0.4s, margin-top 0.4s, margin-right 0.4s, margin-left 0.4s,  box-shadow 0.4s;}
 .chobigulo:hover{height:62px; width:62px; margin-top:7px; margin-right:58px; margin-left:0px; box-shadow:-4px 4px 4px #446;}
 
+input{ border:2px solid #999;transition: border-radius 0.7s;}
+input:focus{background: #fff;color:#000; border-radius:20px; outline: 0px;}
