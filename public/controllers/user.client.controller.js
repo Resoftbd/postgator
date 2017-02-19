@@ -25,31 +25,32 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
 
     $scope.login=function(){
     	$http({
-        url:'http://127.0.0.1:3000/login/',
-        method: 'POST',
-        data: $httpParamSerializerJQLike($scope.user),
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }
-    }).success(function(response){
+            url: 'http://127.0.0.1:3000/login/',
+            method: 'POST',
+            data: $httpParamSerializerJQLike($scope.user),
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).success(function(response){
         console.log(response);
         init();
-        $scope.msg="Successssss!!!";
+
+        $scope.msg="successsss password!!!";
         $scope.msgType="success";
-        //$location.url("../views/userDashboard");
+       // $location.url("../views/userDashboard");
+
     });
     };
-
 	$scope.saveUser=function(){
-		console.log($scope.newUser);
+		//console.log($scope.newUser);
 		/*var data = $.param({
             register: JSON.stringify({
                 users_name: $scope.newUser.users_name,
                 users_email : $scope.newUser.users_email,
                 users_password : $scope.newUser.users_password
             })
-        });
-        console.log(data);*/
+        });*/
+        console.log(data);
 		$http({
 			url:'http://127.0.0.1:3000/register/',
 			method: 'POST',
@@ -58,7 +59,7 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
 				'Content-Type': 'application/x-www-form-urlencoded'
 			}
 		}).success(function(response){
-		   console.log(response);
+		   //console.log(response);
 		   init();
 			$scope.msg="New User Added Successfully!!!";
 			$scope.msgType="success";

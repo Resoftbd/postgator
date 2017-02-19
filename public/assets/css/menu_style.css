@@ -90,6 +90,7 @@ img.icon{
 }
 .hm{
 	background:rgba(29, 162, 168, 0.8);
+<<<<<<< HEAD
 	background: #240A33;
 }
 .fb{
@@ -108,4 +109,23 @@ img.icon{
 	background:rgba(93, 181, 29, 0.8);
 	background: #112433;
 	
+=======
+	background: #55498E;
+}
+.fb{
+	background:rgba(255, 89, 76, 0.8);
+	background: #3D2182;
+}
+.gp{
+	background:rgba(47, 31, 64, 0.8);
+	background: #5A4081;
+}
+.tw{
+	background:rgba(254, 162, 14, 0.8);
+	background: #3D2182;
+}
+.cl{
+	background:rgba(93, 181, 29, 0.8);
+	background: #55498E;
+>>>>>>> 3345da75548c156ce8adfb9dfe48e3a6d34dce8c
 }
