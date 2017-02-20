@@ -19,7 +19,7 @@
 </head>
 
 
-<body id="grad" ng-app="postgator" ng-controller="postController" onclick="change()">
+<body id="grad" ng-app="postgator" ng-controller="postController" onclick="change()" >
 
 <img id="logo" src="../assets/img/jj.png" style="position:fixed; left:45vw; top: 9.5vh; height:9.5vw; width:10vw;">
 		<div class="log_reg">
@@ -40,13 +40,13 @@
 
 								<label class="control-label col-sm-2" for="email"><i class="fa fa-envelope icons"></i></label>
 								<div class="col-sm-10">
-								  <input type="email" class="form-control" id="email" placeholder="Enter email">
+								  <input type="email" class="form-control" ng-model="user.users_email" id="email" placeholder="Enter email">
 								</div>
 							  </div>
 							  <div class="form-group">
 								<label class="control-label col-sm-2" for="pwd"><i class="fa fa-lock icons"></i></label>
 								<div class="col-sm-10">
-								  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+								  <input type="password" class="form-control" ng-model="user.users_password" id="pwd" placeholder="Enter password">
 
 								</div>
 							  </div>
@@ -62,6 +62,10 @@
 						</form>
 				  </div>
 				<div id="menu1" class="tab-pane fade">
+					<div class="alert alert-{{msgType}}" ng-if="msg">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						{{msg}}
+					</div>
 					<form class="form-horizontal" role="form">
 								  <div class="form-group">
 									<label class="control-label col-sm-2" for="name"><i class="fa fa-user icons"></i></label>
@@ -79,7 +83,7 @@
 
 									<label class="control-label col-sm-2" ng-model="newUser.users_password" for="pwd"><i class="fa fa-lock icons"></i></label>
 									<div class="col-sm-10">
-									  <input type="password" class="form-control" id="pwd_reg" placeholder="Enter password">
+									  <input type="password" class="form-control"  ng-model="newUser.users_password" id="pwd_reg" placeholder="Enter password">
 
 									</div>
 								  </div>

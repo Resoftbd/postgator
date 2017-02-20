@@ -5,21 +5,26 @@ module.exports = function(app) {
 
     var UserModel = require("../models/user.server.model.js")();
 
-    app.get('/login', function (req, res) {
+    app.post('/login', function (req, res) {
         var data = req.body;
         console.log(data);
-        UserModel.findOne(data, function (err, objects) {
+        UserModel.findOne({users_email: data.users_email,users_password:data.users_password}, function (err, objects) {
+
             if (err) {
-                res.send(err.message)
+                res.send(err.message);
                 return console.error(err);
             }
-            res.send(objects);
-            req.session.loggedIn =true;
-            req.session.users_id = res.obj._id;
-            console.log(res);
-            console.log(req.session.users_id);
+            else {
+                if (objects) {
+                    res.send(objects);
+                    req.session.loggedIn = true;
+                    req.session.users_id = objects._id;
+                    console.log(req.session.loggedIn);
+                    console.log(req.session.users_id);
+                   // res.send({loggedIn:req.session.loggedIn,user_id:req.session.users_id});
+                }
 
-
+            }
         });
     });
 
@@ -29,11 +34,12 @@ module.exports = function(app) {
         console.log(data);
         UserModel.create(data, function (err, newInstance) {
             if (err) {
-                res.send(err.message)
+                res.send(err.message);
                 return console.error(err);
             }
             console.log(newInstance);
             res.send(newInstance);
+            //req.redirect('userDashboard');
         });
     });
 

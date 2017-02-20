@@ -1,6 +1,6 @@
 var myApp = angular.module("postgator", []);
 
-myApp.controller('postController', function($scope, $http, $httpParamSerializerJQLike,$location){
+myApp.controller('postController', function($scope, $http, $httpParamSerializerJQLike,$window){
 	//console.log("In myController...");
 
 	function init(){
@@ -9,7 +9,6 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
 		$scope.clickedUser = {};
 		$scope.msg="";
 		$scope.msgType="";
-
 		/*$scope.users = [
 		{username: "testing", fullName: "testdddd", email: "test.com"},
 		{username: "fdg", fullName: "testdddd", email: "ffg.com"},
@@ -19,9 +18,15 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
 		$http.get("http://127.0.0.1:3000/read/").then(function(response){
 			$scope.users = response.data;
 			console.log($scope.users);
-		});*/
+		});
+		if(sessionStorage.loggedIn!= true){
+            $window.location.href = 'http://127.0.0.1:3000/views/index.html';
+        }*/
 	}
 	init();
+    $scope.user_login=function(){
+        $window.location.href = 'http://127.0.0.1:3000/views/index.html';
+    }
 
     $scope.login=function(){
     	$http({
@@ -31,13 +36,22 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
-    }).success(function(response){
-        console.log(response);
-        init();
-        $scope.msg="Selected User Updated Successfully!!!";
-        $scope.msgType="success";
-        $location.url("../views/userDashboard");
-    });
+    }).then(function successCallback(response) {
+            // this callback will be called asynchronously
+            // when the response is available
+          /*  init();
+                $scope.msg="Successfully created new user!!!";
+                $scope.msgType="success";
+            */
+            $window.location.href = 'http://localhost:3000/views/menu.html';
+
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            init();
+            $scope.msg="Wrong Username or Password!!!";
+            $scope.msgType="danger";
+        });
     };
 
 	$scope.saveUser=function(){
@@ -57,13 +71,21 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			}
-		}).success(function(response){
-		   console.log(response);
-		   init();
-			$scope.msg="New User Added Successfully!!!";
-			$scope.msgType="success";
+		}).then(function successCallback(response) {
+            // this callback will be called asynchronously
+            // when the response is available
+            $window.location.href = 'http://localhost:3000/views/social_login.html';
+            init();
+            $scope.msg="Successfully created new user!!!";
+            $scope.msgType="success";
 
-		});
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            init();
+            $scope.msg="Failed!!!";
+            $scope.msgType="danger";
+        });
 	};
 
 	$scope.selectUser=function(user){
