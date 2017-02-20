@@ -4,7 +4,34 @@ var mongoose = require('mongoose');
 module.exports = function(app) {
 
     var UserModel = require("../models/user.server.model.js")();
-
+    app.get('/',function(req,res){
+        sess = req.session;
+    //Session set when user Request our app via URL
+        if(sess.loggedIn==true) {
+            /*
+             * This line check Session existence.
+             * If it existed will do some action.
+             */
+            res.redirect('/menu');
+        }
+        else {
+            res.render('index.html');
+        }
+    });
+    app.get('/menu',function(req,res){
+        sess = req.session;
+        //Session set when user Request our app via URL
+        if(sess.loggedIn) {
+            /*
+             * This line check Session existence.
+             * If it existed will do some action.
+             */
+            res.render('menu.html');
+        }
+        else {
+            res.render('index.html');
+        }
+    });
     app.post('/login', function (req, res) {
         var data = req.body;
         console.log(data);
@@ -21,7 +48,7 @@ module.exports = function(app) {
                     req.session.users_id = objects._id;
                     console.log(req.session.loggedIn);
                     console.log(req.session.users_id);
-                   // res.send({loggedIn:req.session.loggedIn,user_id:req.session.users_id});
+
                 }
 
             }
@@ -30,7 +57,8 @@ module.exports = function(app) {
 
 
     app.post('/register', function (req, res) {
-        var data = req.body;
+       var data = req.body;
+
         console.log(data);
         UserModel.create(data, function (err, newInstance) {
             if (err) {

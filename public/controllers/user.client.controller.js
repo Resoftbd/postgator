@@ -27,12 +27,7 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
         }*/
 	}
 	init();
-    $scope.user_login=function(){
-        if(sessionStorage.loggedIn == true){
-            user_login();
-        }
-        $window.location.href = 'http://localhost:3000/views/index.html';
-    }
+
 
     $scope.login=function(){
     	$http({
@@ -61,7 +56,7 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
     };
 
 	$scope.saveUser=function(){
-		console.log($scope.newUser);
+		//console.log($scope.newUser);
 		/*var data = $.param({
             register: JSON.stringify({
                 users_name: $scope.newUser.users_name,
@@ -70,6 +65,14 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
             })
         });
         console.log(data);*/
+        
+/*---------------------------- Parsing example By Saif ----------------------------------------*/
+			var jdata=angular.toJson($scope.newUser); //Converts Angular data into a JSON formatted string.. angular.fromJson() reverts it back
+			var obj = JSON.parse(jdata);   // It parses whole JSON string into std object by first string seg
+			obj.users_email="i have changed it...Booooom";
+			$scope.newUser=angular.fromJson(obj);
+			console.log($scope.newUser);  //obj.users_email calls users_email value from it's reference
+/*----------------------------------------------------------------------------------------------------------*/
 		$http({
 			url:'http://127.0.0.1:3000/register/',
 			method: 'POST',
@@ -92,6 +95,7 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
             $scope.msg="Failed!!!";
             $scope.msgType="danger";
         });
+
 	};
 
 	$scope.selectUser=function(user){
