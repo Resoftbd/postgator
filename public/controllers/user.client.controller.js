@@ -20,12 +20,18 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
 			console.log($scope.users);
 		});
 		if(sessionStorage.loggedIn!= true){
-            $window.location.href = 'http://127.0.0.1:3000/views/index.html';
+            $window.location.href = 'http://localhost:3000/views/index.html';
+        }
+        if(sessionStorage.loggedIn == true){
+            $window.location.href = 'http://localhost:3000/views/menu.html';
         }*/
 	}
 	init();
     $scope.user_login=function(){
-        $window.location.href = 'http://127.0.0.1:3000/views/index.html';
+        if(sessionStorage.loggedIn == true){
+            user_login();
+        }
+        $window.location.href = 'http://localhost:3000/views/index.html';
     }
 
     $scope.login=function(){
