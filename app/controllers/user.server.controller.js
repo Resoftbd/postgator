@@ -60,18 +60,29 @@ module.exports = function(app) {
        var data = req.body;
 
         console.log(data);
-        UserModel.create(data, function (err, objects) {
+        UserModel.create(data, function (err, newInstance) {
             if (err) {
                 res.send(err.message);
                 return console.error(err);
             }
-            console.log(objects);
-            res.send(objects);
+            else{
+                console.log(newInstance);
+                // res.send(objects);
 
-            req.session.loggedIn = true;
-            req.session.users_id = objects._id;
-            console.log(req.session.loggedIn);
-            console.log(req.session.users_id);
+                req.session.loggedIn = true;
+                req.session.users_id = newInstance._id;
+                console.log(req.session.loggedIn);
+                console.log(req.session.users_id);
+                UserModel.findOne( {_id :req.session.users_id }, function (err, objects) {
+                    if (err) {
+                        res.send(err.message)
+                        return console.error(err);
+                    }
+                    res.send(objects);
+                    //res.render('social_login', objects);
+                });
+            }
+
         });
     });
 
@@ -88,7 +99,7 @@ module.exports = function(app) {
     app.post('/update', function (req, res) {
         var data = req.body;
         delete data.$$hashKey;
-        UserModel.update({_id: data._id}, data, {multi: true}, function (err, message) {
+        UserModel.update({_id: req.session.users_id}, data, {multi: true}, function (err, message) {
             if (err) {
                 res.send(err.message)
                 return console.error(err);

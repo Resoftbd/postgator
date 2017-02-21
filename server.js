@@ -11,10 +11,20 @@ var passport      = require('passport');
 var cookieParser  = require('cookie-parser');
 var session       = require('express-session');
 var mongoose      = require('mongoose');
-
-
+//var cons          = require('consolidate');
 mongoose.connect("mongodb://root:12345@127.0.0.1:27017/admin");  //connect to database
+
+
+
 //For express
+//app.use(morgan('dev'));
+// assign the swig engine to .html files
+//app.engine('html', cons.swig);
+
+// set .html as the default extension
+//app.set('view engine', 'html');
+//app.set('views', __dirname + '/public/views');
+
 app.use(express.static(__dirname + '/public/views'));
 app.use(express.static(__dirname + '/public'));
 app.use(cors({}));

@@ -44,6 +44,7 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
                 $scope.msg="Successfully created new user!!!";
                 $scope.msgType="success";
             */
+
             $window.location.href = 'http://localhost:3000/views/menu.html';
 
         }, function errorCallback(response) {
@@ -75,7 +76,8 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
 		}).then(function successCallback(response) {
             // this callback will be called asynchronously
             // when the response is available
-            $window.location.href = 'http://localhost:3000/views/social_login.html';
+            $scope.social = response.data;
+			$window.location.href = 'http://localhost:3000/views/social_login.html';
             init();
             $scope.msg="Successfully created new user!!!";
             $scope.msgType="success";
@@ -89,7 +91,8 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
         });
 
 	};
-    $scope.socialAuth=function(social){$http({
+    $scope.socialAuth=function(social)
+	{$http({
         url:'http://127.0.0.1:3000/update/',
         method: 'POST',
         data: $httpParamSerializerJQLike($scope.social),

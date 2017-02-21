@@ -57,13 +57,14 @@
             if (response.status === 'connected') {
                 document.getElementById('status').innerHTML = 'We are connected.';
                 document.getElementById('login').style.visibility = 'hidden';
+                getInfo();
             } else if (response.status === 'not_authorized') {
                 document.getElementById('status').innerHTML = 'We are not logged in.'
             } else {
                 document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
             }
         }, {scope: 'email'});
-        getInfo();
+
     }
 
     // getting basic user info
@@ -83,9 +84,12 @@
     <ul class="log_social">
 
         <div id="status"></div>
-
-<button onclick="getInfo()">get info</button>
-
+        <tr ng-repeat="user in social">
+            <td>{{$index+1}}.</td>
+            <td>{{user.users_name}}</td>
+            <td>{{user.users_email}}</td>
+        </tr>
+        <input type="text" id ="fb_user" ng-model="social.users_id" value="{{users.users_name}}">
         <input type="hidden" id ="fb_id" ng-model="social.users_fb_id" value="">
         <input type="hidden" id ="fb_name" ng-model="social.users_fb_name" value="">
        <li style="list-style:none; display:inline-block;"> <button onclick="login()" id="login"><img src="../assets/img/Facebook.png" class="chobi"></button> </li>
