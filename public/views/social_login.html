@@ -14,13 +14,65 @@
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link href="../assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <script type="text/javaScript" src="../controllers/app_controller.js"></script>
+    <script type="text/javaScript" src="../controllers/user.client.controller.js"></script>
 
 
 </head>
 
 
-<body id="grad" ng-app="postgator" ng-controller="postController" onclick="change()">
+<body id="grad" ng-app="postgator" ng-controller="postController" >
+
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1893798254237418',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            document.getElementById('status').innerHTML = 'We are connected.';
+            document.getElementById('login').style.visibility = 'hidden';
+        } else if (response.status === 'not_authorized') {
+            document.getElementById('status').innerHTML = 'We are not logged in.'
+        } else {
+            document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+        }
+    });
+    };
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // login with facebook with extra permissions
+    function login() {
+        FB.login(function(response) {
+            if (response.status === 'connected') {
+                document.getElementById('status').innerHTML = 'We are connected.';
+                document.getElementById('login').style.visibility = 'hidden';
+            } else if (response.status === 'not_authorized') {
+                document.getElementById('status').innerHTML = 'We are not logged in.'
+            } else {
+                document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+            }
+        }, {scope: 'email'});
+        getInfo();
+    }
+
+    // getting basic user info
+    function getInfo() {
+        FB.api('/me', function(response) {
+          var fb_id = response.id;
+          var fb_name = response.name;
+        });
+    }
+</script>
 
 <img id="logo" src="../assets/img/jj.png" style="position:fixed; left:45vw; top: 9.5vh; height:9.5vw; width:10vw;">
 
@@ -28,7 +80,13 @@
 
     <p class="suggestion_para">Connect  To Your Accounts</p>
     <ul class="log_social">
-         <li style="list-style:none; display:inline-block;"><img src="../assets/img/Facebook.png" class="chobi"> </li>
+
+        <div id="status"></div>
+
+
+
+
+       <li style="list-style:none; display:inline-block;"> <button onclick="login()" ng-click="saveFb(fb_id,fb_name)" id="login"><img src="../assets/img/Facebook.png" class="chobi"></button> </li>
          <li style="list-style:none; display:inline-block;"><img src="../assets/img/googleplus.png" class="chobi"> </li>
          <li style="list-style:none; display:inline-block;"><img src="../assets/img/twitter.png" class="chobi"> </li>
          <li style="list-style:none; display:inline-block;"><img src="../assets/img/instagram.png" class="chobi"> </li>

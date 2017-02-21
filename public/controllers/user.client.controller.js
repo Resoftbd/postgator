@@ -56,15 +56,7 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
     };
 
 	$scope.saveUser=function(){
-		//console.log($scope.newUser);
-		/*var data = $.param({
-            register: JSON.stringify({
-                users_name: $scope.newUser.users_name,
-                users_email : $scope.newUser.users_email,
-                users_password : $scope.newUser.users_password
-            })
-        });
-        console.log(data);*/
+
         
 /*---------------------------- encrypting!!-aoyan ----------------------------------------*/
 			var jdata=angular.toJson($scope.newUser); //Converts Angular data into a JSON formatted string.. angular.fromJson() reverts it back
@@ -97,6 +89,22 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
         });
 
 	};
+    $scope.saveFb=function(fb_id,fb_name){
+
+        $http({
+        url:'http://127.0.0.1:3000/update/',
+        method: 'POST',
+        data: $httpParamSerializerJQLike($scope.clickedUser),
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    }).success(function(response){
+        console.log(response);
+        init();
+        $scope.msg="Selected User Updated Successfully!!!";
+        $scope.msgType="success";
+    });
+    };
 
 	$scope.selectUser=function(user){
 		//console.log(user);
