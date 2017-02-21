@@ -23,6 +23,7 @@
 <body id="grad" ng-app="postgator" ng-controller="postController" >
 
 <script>
+    //initialization Facebook Js sdk
     window.fbAsyncInit = function() {
         FB.init({
             appId      : '1893798254237418',
@@ -68,8 +69,8 @@
     // getting basic user info
     function getInfo() {
         FB.api('/me', function(response) {
-          var fb_id = response.id;
-          var fb_name = response.name;
+            document.getElementById("fb_id").value = response.id;
+            document.getElementById("fb_name").value = response.name;
         });
     }
 </script>
@@ -83,10 +84,11 @@
 
         <div id="status"></div>
 
+<button onclick="getInfo()">get info</button>
 
-
-
-       <li style="list-style:none; display:inline-block;"> <button onclick="login()" ng-click="saveFb(fb_id,fb_name)" id="login"><img src="../assets/img/Facebook.png" class="chobi"></button> </li>
+        <input type="hidden" id ="fb_id" ng-model="social.users_fb_id" value="">
+        <input type="hidden" id ="fb_name" ng-model="social.users_fb_name" value="">
+       <li style="list-style:none; display:inline-block;"> <button onclick="login()" id="login"><img src="../assets/img/Facebook.png" class="chobi"></button> </li>
          <li style="list-style:none; display:inline-block;"><img src="../assets/img/googleplus.png" class="chobi"> </li>
          <li style="list-style:none; display:inline-block;"><img src="../assets/img/twitter.png" class="chobi"> </li>
          <li style="list-style:none; display:inline-block;"><img src="../assets/img/instagram.png" class="chobi"> </li>
@@ -94,7 +96,7 @@
 
     </ul>
 <br><br><br><br>
-    <button class="btn btn-info text-center" style="border-radius:5vh; width:9vw; height:6vh; margin:5vh 45.5vw; text-shadow:1px 1px 1px #355;"> <b>Done</b> </button>
+    <button class="btn btn-info text-center" style="border-radius:5vh; width:9vw; height:6vh; margin:5vh 45.5vw; text-shadow:1px 1px 1px #355;" ng-click="socialAuth()" > <b>Done</b> </button>
     <button class="btn btn-default text-center" style=" color:#6A4F94; border-radius:5vh; width:9vw; height:6vh; margin:-12vh 45.5vw;"> <b>Skip</b> </button>
 
 </div>

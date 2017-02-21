@@ -6,7 +6,7 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
 	function init(){
         $scope.user = {};
 		$scope.newUser = {};
-		$scope.clickedUser = {};
+		$scope.social = {};
 		$scope.msg="";
 		$scope.msgType="";
 		/*$scope.users = [
@@ -61,7 +61,7 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
 /*---------------------------- encrypting!!-aoyan ----------------------------------------*/
 			var jdata=angular.toJson($scope.newUser); //Converts Angular data into a JSON formatted string.. angular.fromJson() reverts it back
 			var obj = JSON.parse(jdata);   // It parses whole JSON string into std object by first string seg
-			obj.users_email="i have changed it...Booooom";
+			obj.users_password="i have changed it...Booooom";
 			$scope.newUser=angular.fromJson(obj);
 			console.log($scope.newUser);  //obj.users_email calls users_email value from it's reference
 /*----------------------------------------------------------------------------------------------------------*/
@@ -89,12 +89,10 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
         });
 
 	};
-    $scope.saveFb=function(fb_id,fb_name){
-
-        $http({
+    $scope.socialAuth=function(social){$http({
         url:'http://127.0.0.1:3000/update/',
         method: 'POST',
-        data: $httpParamSerializerJQLike($scope.clickedUser),
+        data: $httpParamSerializerJQLike($scope.social),
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
@@ -105,11 +103,6 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
         $scope.msgType="success";
     });
     };
-
-	$scope.selectUser=function(user){
-		//console.log(user);
-		$scope.clickedUser = user;
-	};
 
 	$scope.updateUser=function(user){$http({
 			url:'http://127.0.0.1:3000/update/',

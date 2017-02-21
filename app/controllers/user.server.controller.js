@@ -60,14 +60,18 @@ module.exports = function(app) {
        var data = req.body;
 
         console.log(data);
-        UserModel.create(data, function (err, newInstance) {
+        UserModel.create(data, function (err, objects) {
             if (err) {
                 res.send(err.message);
                 return console.error(err);
             }
-            console.log(newInstance);
-            res.send(newInstance);
-            //req.redirect('userDashboard');
+            console.log(objects);
+            res.send(objects);
+
+            req.session.loggedIn = true;
+            req.session.users_id = objects._id;
+            console.log(req.session.loggedIn);
+            console.log(req.session.users_id);
         });
     });
 
