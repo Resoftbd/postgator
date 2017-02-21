@@ -66,7 +66,7 @@ myApp.controller('postController', function($scope, $http, $httpParamSerializerJ
         });
         console.log(data);*/
         
-/*---------------------------- Parsing example By Saif ----------------------------------------*/
+/*---------------------------- encrypting!!-aoyan ----------------------------------------*/
 			var jdata=angular.toJson($scope.newUser); //Converts Angular data into a JSON formatted string.. angular.fromJson() reverts it back
 			var obj = JSON.parse(jdata);   // It parses whole JSON string into std object by first string seg
 			obj.users_email="i have changed it...Booooom";

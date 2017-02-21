@@ -12,6 +12,7 @@ var cookieParser  = require('cookie-parser');
 var session       = require('express-session');
 var mongoose      = require('mongoose');
 
+
 mongoose.connect("mongodb://root:12345@127.0.0.1:27017/admin");  //connect to database
 //For express
 app.use(express.static(__dirname + '/public/views'));
